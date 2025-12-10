@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Color Navbar</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: system-ui, sans-serif;
+      transition: background 0.2s;
+    }
+    .navbar {
+      display: flex;
+      justify-content: center;
+      background: #fff;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+      padding: 1rem 0;
+    }
+    .nav-link {
+      color: #222;
+      font-weight: bold;
+      text-decoration: none;
+      padding: 0.5rem 1.5rem;
+      transition: background 0.15s, color 0.15s;
+      border-radius: 4px;
+      font-size: 1.05rem;
+      margin: 0 1rem;
+      cursor: pointer;
+    }
+    .nav-link:hover {
+      background: #f0f0f0;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <a class="nav-link" data-color="red">Red</a>
+    <a class="nav-link" data-color="blue">Blue</a>
+    <a class="nav-link" data-color="green">Green</a>
+  </nav>
+  <script>
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        document.body.style.background = link.dataset.color;
+      });
+    });
+  </script>
+</body>
+</html>
